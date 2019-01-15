@@ -18,22 +18,18 @@ package org.lineageos.settings.device;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 public class DeviceSettingsActivity extends Activity {
 
     private DeviceSettings mDeviceSettingsFragment;
-    private static Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
-
-        mContext = this.getApplicationContext();
 
         Fragment fragment = getFragmentManager().findFragmentById(android.R.id.content);
         if (fragment == null) {
@@ -44,7 +40,6 @@ public class DeviceSettingsActivity extends Activity {
         } else {
             mDeviceSettingsFragment = (DeviceSettings) fragment;
         }
-
     }
 
     @Override
@@ -58,9 +53,4 @@ public class DeviceSettingsActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-    static Context getContext() {
-        return mContext;
-    }
-
 }
