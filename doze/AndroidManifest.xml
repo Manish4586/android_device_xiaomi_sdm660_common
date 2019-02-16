@@ -24,7 +24,7 @@
 #
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.carbonrom.settings.doze"
+    package="com.android.settings.doze"
     android:versionCode="1"
     android:versionName="1.0"
     android:sharedUserId="android.uid.system">
@@ -50,12 +50,12 @@
         </receiver>
 
         <service android:name=".DozeService"
-                 android:permission="XiaomiDozeService">
+                 android:permission="DozeService">
         </service>
 
         <activity
             android:name=".DozeSettingsActivity"
-            android:label="@string/ambient_display_xiaomi"
+            android:label="@string/ambient_display_doze"
             android:icon="@drawable/round_phonelink_setup_24"
             android:theme="@style/Theme.Main">
             <intent-filter>
