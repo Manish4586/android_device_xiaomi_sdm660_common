@@ -29,7 +29,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 $(call inherit-product, build/target/product/embedded.mk)
-$(call inherit-product-if-exists, vendor/xiaomi/MiuiCamera/config.mk)
+$(call inherit-product, vendor/xiaomi/MiuiCamera/config.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS := device/xiaomi/sdm660-common/overlay
@@ -340,7 +340,6 @@ PRODUCT_PACKAGES += \
 	init.qcom.rc \
 	init.qcom.usb.rc \
 	init.target.rc \
-	init.spectrum.rc \
 	ueventd.qcom.rc
 
 # RCS
@@ -367,6 +366,10 @@ PRODUCT_PACKAGES += \
 	rild \
 	CarrierConfig
 
+# MiuiCamera
+PRODUCT_PACKAGES += \
+    MiuiCamera	
+	
 # Sensors
 PRODUCT_PACKAGES += \
 	android.hardware.sensors@1.0-impl:64 \
@@ -436,14 +439,6 @@ PRODUCT_COPY_FILES += \
 	$(PLATFORM_PATH)/wifi/wifi_concurrency_cfg.txt:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wifi_concurrency_cfg.txt \
 	$(PLATFORM_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
 	$(PLATFORM_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
-
-# XiaomiParts
-PRODUCT_PACKAGES += \
-	XiaomiParts
-
-# KCal
-PRODUCT_PACKAGES += \
-	KCal
 
 # Wi-Fi Display
 PRODUCT_BOOT_JARS += \
