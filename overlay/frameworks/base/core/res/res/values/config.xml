@@ -172,8 +172,8 @@
 	<!-- Whether camera shutter sound is forced or not  (country specific). -->
 	<bool name="config_camera_sound_forced">false</bool>
 
-	<!-- Configuration to enable non-default PDP during IWLAN
-	<bool name="config_feature_iwlan_enabled">true</bool> -->
+	<!-- Configuration to enable non-default PDP during IWLAN -->
+	<bool name="config_feature_iwlan_enabled">true</bool>
 
 	<!-- Is the device capable of supporting digital pen
 	<bool name="config_digitalPenCapable">true</bool> -->
@@ -413,6 +413,9 @@
 
     <!-- Enable system navigation keys. -->
     <bool name="config_supportSystemNavigationKeys">true</bool>
+	
+	<!-- If true, the display will be shifted around in ambient mode. -->
+    <bool name="config_enableBurnInProtection">true</bool>
 
     <!-- Specify if the fingerprint hardware support gestures-->
     <bool name="config_fingerprintSupportsGestures">true</bool>
@@ -421,6 +424,12 @@
          Set to -1 to disable the proximity sensor check at all-->
     <integer name="config_flashlightProximityTimeout">-1</integer>
 	
-	    <!-- Show HD VoLTE Icon -->
+	<!-- Show HD VoLTE Icon -->
 	<bool name="config_display_hd_volte">true</bool>
+	
+	<!-- Show Volte Icon -->
+	<bool name="config_carrier_vt_available">true</bool>
+	
+	<!-- Full screen aspect ratio -->
+    <bool name="config_haveHigherAspectRatioScreen">true</bool>
 </resources>

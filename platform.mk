@@ -30,6 +30,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 $(call inherit-product, build/target/product/embedded.mk)
 $(call inherit-product, vendor/xiaomi/MiuiCamera/config.mk)
+$(call inherit-product, vendor/google/GoogleCamera/config.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS := device/xiaomi/sdm660-common/overlay
@@ -89,8 +90,12 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.af.client_heap_size_kbyte=7168 \
-	ro.config.media_vol_steps=25 \
-	ro.config.vc_call_vol_steps=7
+	ro.config.media_vol_steps=15 \
+	ro.config.vc_call_vol_steps=4 \
+	ro.config.alarm_vol_steps=6 \
+	ro.config.ring_vol_steps=7
+	
+PRODUCT_CHARACTERISTICS := nosdcard	
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -104,8 +109,9 @@ PRODUCT_PACKAGES += \
 	camera.device@3.2-impl \
 	libxml2 \
 	vendor.qti.hardware.camera.device@1.0 \
-	vendor.qti.hardware.camera.device@1.0_vendor
-
+	vendor.qti.hardware.camera.device@1.0_vendor \
+    GoogleCamera
+	
 # CNE
 PRODUCT_PACKAGES += \
 	cneapiclient \
@@ -133,9 +139,6 @@ PRODUCT_PACKAGES += \
 	android.hardware.configstore@1.0-service \
 	android.hardware.broadcastradio@1.0-impl
 
-# Doze
-PRODUCT_PACKAGES += \
-	Doze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -427,6 +430,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.vr.high_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vr.high_performance.xml
 
+# Google Permissions
+PRODUCT_COPY_FILES += \
+    $(PLATFORM_PATH)/permissions/pixel_2017_exclusive.xml:system/etc/permissions/pixel_2017_exclusive.xml \
+    $(PLATFORM_PATH)/permissions/pixel_2017.xml:system/etc/permissions/pixel_2017.xml \
+    $(PLATFORM_PATH)/permissions/nexus.xml:system/etc/permissions/nexus.xml \
+    $(PLATFORM_PATH)/permissions/google_build.xml:system/etc/permissions/google_build.xml \
+    $(PLATFORM_PATH)/permissions/google-hiddenapi-package-whitelist.xml:system/etc/sysconfig/google-hiddenapi-package-whitelist.xml	
+	
 # Wifi
 PRODUCT_PACKAGES += \
 	android.hardware.wifi@1.0-service \
