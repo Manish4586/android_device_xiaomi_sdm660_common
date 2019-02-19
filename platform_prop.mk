@@ -141,7 +141,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.dbg.ims_volte_enable=1 \
 	persist.radio.videopause.mode=1 \
-	persist.data.iwlan.enable=true \
 	persist.dbg.volte_avail_ovr=1 \
 	persist.dbg.vt_avail_ovr=1 \
 	persist.radio.VT_HYBRID_ENABLE=1
