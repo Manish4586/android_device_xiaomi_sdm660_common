@@ -28,9 +28,9 @@ PLATFORM_PATH := device/xiaomi/sdm660-common
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
-$(call inherit-product, build/target/product/embedded.mk)
-$(call inherit-product, vendor/xiaomi/MiuiCamera/config.mk)
-$(call inherit-product, vendor/google/GoogleCamera/config.mk)
+$(call inherit-product-if-exists, build/target/product/embedded.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/MiuiCamera/config.mk)
+$(call inherit-product-if-exists, vendor/google/GoogleCamera/config.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS := device/xiaomi/sdm660-common/overlay
@@ -53,11 +53,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	AntHalService \
 	antradio_app \
-	com.dsi.ant.antradio_library \
 	libantradio
-
-PRODUCT_COPY_FILES += \
-	external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -94,9 +90,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.config.vc_call_vol_steps=4 \
 	ro.config.alarm_vol_steps=6 \
 	ro.config.ring_vol_steps=7
-	
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    sys.display-size=3840x2160
 	
 PRODUCT_CHARACTERISTICS := nosdcard	
 
@@ -391,13 +384,6 @@ PRODUCT_PACKAGES += \
 # Sensor HAL conf file
 PRODUCT_COPY_FILES += \
 	$(PLATFORM_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
-
-# Telephony
-PRODUCT_PACKAGES += \
-	telephony-ext
-
-PRODUCT_BOOT_JARS += \
-	telephony-ext
 
 # TextClassifier
 PRODUCT_PACKAGES += \
