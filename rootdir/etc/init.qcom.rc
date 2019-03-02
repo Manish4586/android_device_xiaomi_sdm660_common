@@ -478,8 +478,6 @@ service vendor.qcom-c_main-sh /vendor/bin/init.class_main.sh
 
 on property:vold.decrypt=trigger_restart_framework
     start vendor.qcom-c_main-sh
-    start config_bt_addr
-    start wcnss-service
     start vendor.cnss_diag
 
 on property:persist.env.fastdorm.enabled=true
@@ -606,7 +604,7 @@ service vendor.atfwd /vendor/bin/ATFWD-daemon
     group system radio
     disabled
 
-on property:persist.radio.atfwd.start=true
+on property:persist.vendor.radio.atfwd.start=true
     start vendor.atfwd
 
 service hostapd_fst /vendor/bin/hw/hostapd -dd -g /data/vendor/wifi/hostapd/global
