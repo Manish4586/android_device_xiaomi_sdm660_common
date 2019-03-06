@@ -109,6 +109,10 @@ on boot
     mkdir /mnt/vendor/persist/time 0770 system system
     mkdir /mnt/vendor/persist/secnvm 0770 system system
 
+    #create port-bridge log dir
+    mkdir /data/vendor/port_bridge 0770 radio radio
+    chmod 0770 /data/vendor/port_bridge	
+	
     #Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
 
@@ -365,12 +369,9 @@ on post-fs-data
     # Create /data/vendor/time folder for time-services
     mkdir /data/vendor/time 0700 system system
 
-    mkdir /data/vendor/audio/ 0770 media audio
-
-    # Create a folder for audio delta files
-    mkdir /data/vendor/audio/acdbdata 0770 media audio
-    mkdir /data/vendor/audio/acdbdata/delta 0770 media audio
-
+    # Create directory used by the DASH client
+    mkdir /data/misc/dash 0770 media audio
+	
     setprop vold.post_fs_data_done 1
 
     # Create a folder for SRS to be able to create a usercfg file
@@ -568,7 +569,7 @@ service vendor.cnss-daemon /system/vendor/bin/cnss-daemon -n -l
     capabilities NET_ADMIN
 	writepid /dev/cpuset/system-background/tasks
 
-on property:sys.powerctl=*
+on property:sys.shutdown.requested=*
 	stop vendor.cnss-daemon
 
 service vendor.loc_launcher /system/vendor/bin/loc_launcher
@@ -577,6 +578,13 @@ service vendor.loc_launcher /system/vendor/bin/loc_launcher
     group gps
 	writepid /dev/cpuset/system-background/tasks
 
+service vendor.port-bridge /system/vendor/bin/port-bridge
+    class main
+    user radio
+    group radio system inet
+    disabled
+    oneshot
+	
 on property:crypto.driver.load=1
     insmod /system/lib/modules/qce.ko
     insmod /system/lib/modules/qcedev.ko
