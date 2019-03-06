@@ -95,9 +95,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.config.alarm_vol_steps=6 \
 	ro.config.ring_vol_steps=7
 	
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    sys.display-size=3840x2160
-	
 PRODUCT_CHARACTERISTICS := nosdcard	
 
 # Bluetooth

@@ -73,8 +73,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.camera.preview.ubwc=0 \
 	persist.vendor.qti.telephony.vt_cam_interface=1 \
-	vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi,org.cyanogenmod.snap \
-	camera.hal1.packagelist=com.whatsapp,com.android.camera,com.android.camera2,com.google.android.GoogleCamera
+	camera.hal1.packagelist=com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android \
+	vendor.camera.hal1.packagelist= com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android
 
 # Charger
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -109,6 +109,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	vendor.gralloc.enable_fb_ubwc=1 \
 	debug.sf.enable_hwc_vds=1 \
 	debug.sf.hw=1 \
+	debug.hwui.renderer=skiagl \
 	persist.hwc.enable_vds=1 \
 	ro.opengles.version=196610 \
 	sdm.debug.disable_skip_validate=1 \
@@ -193,7 +194,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.data.netmgrd.qos.enable=true \
 	persist.data.wda.enable=true \
 	persist.vendor.radio.apm_sim_not_pwdn=1 \
-	persist.radio.atfwd.start=true \
+	persist.vendor.radio.atfwd.start=true \
 	persist.radio.data_con_rprt=1 \
 	persist.rmnet.data.enable=true \
 	persist.vendor.radio.sib16_support=1 \
