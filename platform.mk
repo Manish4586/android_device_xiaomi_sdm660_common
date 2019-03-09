@@ -463,5 +463,5 @@ PRODUCT_BOOT_JARS += \
     WfdCommon
 
 # KCal
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
 	KCal	
