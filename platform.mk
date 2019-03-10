@@ -91,9 +91,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.af.client_heap_size_kbyte=7168 \
 	ro.config.media_vol_steps=15 \
-	ro.config.vc_call_vol_steps=4 \
-	ro.config.alarm_vol_steps=6 \
-	ro.config.ring_vol_steps=7
+	ro.config.vc_call_vol_steps=7 
 	
 PRODUCT_CHARACTERISTICS := nosdcard	
 
@@ -463,7 +461,7 @@ PRODUCT_BOOT_JARS += \
     WfdCommon
 
 # XiaomiParts
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
 	XiaomiParts
 	
 # KCal

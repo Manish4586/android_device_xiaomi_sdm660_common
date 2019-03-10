@@ -56,7 +56,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	vendor.audio.use.sw.alac.decoder=true \
 	vendor.audio.use.sw.ape.decoder=true \
 	vendor.fm.a2dp.conc.disabled=true \
-	vendor.voice.path.for.pcm.voip=true
+	vendor.voice.path.for.pcm.voip=true \
+    media.settings.xml=/system/etc/media_profiles_vendor.xml
 
 
 # Bluetooth
@@ -73,6 +74,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.camera.preview.ubwc=0 \
 	persist.vendor.qti.telephony.vt_cam_interface=1 \
+	vendor.camera.aux.packagelist=com.android.camera,com.google.android.GoogleCamera \
 	camera.hal1.packagelist=com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android \
 	vendor.camera.hal1.packagelist=com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android
 
