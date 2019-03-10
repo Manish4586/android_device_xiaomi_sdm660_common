@@ -74,7 +74,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.camera.preview.ubwc=0 \
 	persist.vendor.qti.telephony.vt_cam_interface=1 \
 	camera.hal1.packagelist=com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android \
-	vendor.camera.hal1.packagelist= com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android
+	vendor.camera.hal1.packagelist=com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android
 
 # Charger
 PRODUCT_PROPERTY_OVERRIDES += \
