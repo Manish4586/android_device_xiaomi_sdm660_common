@@ -57,7 +57,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	vendor.audio.use.sw.ape.decoder=true \
 	vendor.fm.a2dp.conc.disabled=true \
 	vendor.voice.path.for.pcm.voip=true \
-    media.settings.xml=/system/etc/media_profiles_vendor.xml
+    media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
 
 # Bluetooth
@@ -74,6 +74,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.camera.preview.ubwc=0 \
 	persist.vendor.qti.telephony.vt_cam_interface=1 \
+    camera.aux.packagelist=com.android.camera,com.google.android.GoogleCamera \
 	vendor.camera.aux.packagelist=com.android.camera,com.google.android.GoogleCamera \
 	camera.hal1.packagelist=com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android \
 	vendor.camera.hal1.packagelist=com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android
@@ -106,6 +107,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.dirac.acs.ignore_error=1 \
 	ro.audio.soundfx.dirac=true
 
+#QTI Performance
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.enable_prefetch=1 \
+    vendor.iop.enable_uxe=1 \
+    vendor.iop.enable_prefetch_ofr=1 \
+    vendor.perf.iop_v3.enable=1 \
+    ro.vendor.at_library=libqti-at.so \
+    persist.vendor.qti.games.gt.prof=1
+	
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
 	vendor.gralloc.enable_fb_ubwc=1 \
