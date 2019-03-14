@@ -49,16 +49,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
 	fs_config_files
 
-# ANT+
-PRODUCT_PACKAGES += \
-	AntHalService \
-	antradio_app \
-	com.dsi.ant.antradio_library \
-	libantradio
-
-PRODUCT_COPY_FILES += \
-	external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
-
 # Audio
 PRODUCT_PACKAGES += \
 	android.hardware.audio@4.0-impl:32 \
@@ -460,6 +450,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
+# Wallpapers
+PRODUCT_PACKAGES += \
+    WallpapersBReel2018	
+	
 # XiaomiParts
 #PRODUCT_PACKAGES += \
 	XiaomiParts
