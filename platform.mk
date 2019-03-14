@@ -49,12 +49,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
 	fs_config_files
 
-# ANT+
-PRODUCT_PACKAGES += \
-	AntHalService \
-	antradio_app \
-	libantradio
-
 # Audio
 PRODUCT_PACKAGES += \
 	android.hardware.audio@4.0-impl:32 \
