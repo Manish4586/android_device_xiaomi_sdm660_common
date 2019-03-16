@@ -467,7 +467,7 @@ PRODUCT_PACKAGES += \
     PlaygroundMod
 
 # GoogleCamera
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     GoogleCameraMod
 	
 # Lens
