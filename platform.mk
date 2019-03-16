@@ -97,8 +97,7 @@ PRODUCT_PACKAGES += \
 	camera.device@3.2-impl \
 	libxml2 \
 	vendor.qti.hardware.camera.device@1.0 \
-	vendor.qti.hardware.camera.device@1.0_vendor \
-    GoogleCamera
+	vendor.qti.hardware.camera.device@1.0_vendor 
 	
 # CNE
 PRODUCT_PACKAGES += \
@@ -273,6 +272,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
 	frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
 	frameworks/native/data/etc/android.hardware.camera.autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.autofocus.xml \
+	frameworks/native/data/etc/android.hardware.camera.ar.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.ar.xml \
 	frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
 	frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
 	frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml \
@@ -409,13 +409,13 @@ PRODUCT_COPY_FILES += \
 
 # VR feature
 PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/android.hardware.vr.headtracking-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vr.headtracking.xml \
 	frameworks/native/data/etc/android.hardware.vr.high_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vr.high_performance.xml
 
 # Google Permissions
 PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/permissions/pixel_2017_exclusive.xml:system/etc/permissions/pixel_2017_exclusive.xml \
     $(PLATFORM_PATH)/permissions/pixel_2017.xml:system/etc/permissions/pixel_2017.xml \
-    $(PLATFORM_PATH)/permissions/nexus.xml:system/etc/permissions/nexus.xml \
     $(PLATFORM_PATH)/permissions/google_build.xml:system/etc/permissions/google_build.xml \
     $(PLATFORM_PATH)/permissions/google-hiddenapi-package-whitelist.xml:system/etc/sysconfig/google-hiddenapi-package-whitelist.xml	
 	
@@ -443,7 +443,31 @@ PRODUCT_COPY_FILES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
+# Device-specific settings
+PRODUCT_PACKAGES += \
+    Dirac \	
+	
+# ThermalController app
+PRODUCT_PACKAGES += \
+    ThermalController	
+	
 # Wallpapers
 PRODUCT_PACKAGES += \
     WallpapersBReel2018
+
+# Playground for GoogleCamera
+PRODUCT_PACKAGES += \
+    PlaygroundMod
+
+# GoogleCamera
+PRODUCT_PACKAGES += \
+    GoogleCameraMod
+	
+# Lens
+PRODUCT_PACKAGES += \
+    Lens
+
+# WebViewStub
+PRODUCT_PACKAGES += \
+    WebViewStub	
 	
