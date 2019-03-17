@@ -450,6 +450,14 @@ PRODUCT_PACKAGES += \
 # ThermalController app
 PRODUCT_PACKAGES += \
     ThermalController	
+
+# arcore
+PRODUCT_PACKAGES += \
+    arcore	
+
+# vrservices
+PRODUCT_PACKAGES += \
+    vrservices
 	
 # Wallpapers
 PRODUCT_PACKAGES += \
@@ -462,6 +470,14 @@ PRODUCT_PACKAGES += \
 # GoogleCamera
 #PRODUCT_PACKAGES += \
     GoogleCameraMod
+
+# GCS
+PRODUCT_PACKAGES += \
+    GCS	
+
+# YouTube
+PRODUCT_PACKAGES += \
+    YouTube
 	
 # Lens
 PRODUCT_PACKAGES += \
