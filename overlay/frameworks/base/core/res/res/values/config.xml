@@ -172,8 +172,8 @@
 	<!-- Whether camera shutter sound is forced or not  (country specific). -->
 	<bool name="config_camera_sound_forced">false</bool>
 
-	<!-- Configuration to enable non-default PDP during IWLAN
-	<bool name="config_feature_iwlan_enabled">true</bool> -->
+	<!-- Configuration to enable non-default PDP during IWLAN -->
+	<bool name="config_feature_iwlan_enabled">true</bool>
 
 	<!-- Is the device capable of supporting digital pen
 	<bool name="config_digitalPenCapable">true</bool> -->
@@ -279,27 +279,18 @@
 	on the headphone/microphone jack. When false use the older uevent framework -->
 	<bool name="config_useDevInputEventForAudioJack">true</bool>
 
-  <!-- Default list of files pinned by the Pinner Service -->
-  <string-array translatable="false" name="config_defaultPinnerServiceFiles">
-        <item>"/system/framework/arm64/boot-framework.oat"</item>
-        <item>"/system/framework/boot-framework.vdex"</item>
-        <item>"/system/framework/oat/arm64/services.odex"</item>
-        <item>"/system/framework/oat/arm64/services.vdex"</item>
-        <item>"/system/framework/arm64/boot.oat"</item>
-        <item>"/system/framework/boot.vdex"</item>
-        <item>"/system/framework/arm64/boot-core-libart.oat"</item>
-        <item>"/system/framework/boot-core-libart.vdex"</item>
-        <item>/system/lib64/libRScpp.so</item>
-        <item>/system/lib64/libRS.so</item>
-        <item>/system/lib64/libRS_internal.so</item>
-        <item>/system/lib64/libbcinfo.so</item>
-        <item>/system/lib64/libRSDriver.so</item>
-        <item>/system/lib64/libRSCpuRef.so</item>
-        <item>/system/lib64/libblas.so</item>
-        <item>"/system/priv-app/SystemUI/oat/arm64/SystemUI.vdex"</item>
-        <item>"/system/priv-app/SystemUI/oat/arm64/SystemUI.odex"</item>
-        <item>"/system/lib64/libsurfaceflinger.so"</item>
-  </string-array>
+	<!-- Default list of files pinned by the Pinner Service -->
+	<string-array translatable="false" name="config_defaultPinnerServiceFiles">
+		<item>"/system/framework/arm64/boot-framework.oat"</item>
+		<item>"/system/framework/boot-framework.vdex"</item>
+		<item>"/system/framework/oat/arm64/services.odex"</item>
+		<item>"/system/framework/oat/arm64/services.vdex"</item>
+		<item>"/system/framework/arm64/boot.oat"</item>
+		<item>"/system/framework/boot.vdex"</item>
+		<item>"/system/framework/arm64/boot-core-libart.oat"</item>
+		<item>"/system/framework/boot-core-libart.vdex"</item>
+		<item>"/system/lib64/libsurfaceflinger.so"</item>
+	</string-array>
 
 	<!-- True if camera app should be pinned via Pinner Service -->
 	<bool name="config_pinnerCameraApp">true</bool>
@@ -422,28 +413,31 @@
 
     <!-- Enable system navigation keys. -->
     <bool name="config_supportSystemNavigationKeys">true</bool>
+	
+	<!-- If true, the display will be shifted around in ambient mode. -->
+    <bool name="config_enableBurnInProtection">true</bool>
 
     <!-- Specify if the fingerprint hardware support gestures-->
-    <bool name="config_fingerprintSupportsGestures">true</bool>
+    <bool name="config_fingerprintSupportsGestures">false</bool>
 
-		<!-- Time to give to the proximity sensor before toggling the flashlight with the Power button.
+	<!-- Time to give to the proximity sensor before toggling the flashlight with the Power button.
          Set to -1 to disable the proximity sensor check at all-->
     <integer name="config_flashlightProximityTimeout">-1</integer>
-
-		<!-- Paths to the libraries that contain device specific key handlers -->
-		<string-array name="config_deviceKeyHandlerLibs" translatable="false">
-			<item>/system/framework/org.lineageos.keyhandler.jar</item>
-		</string-array>
-
-		<!-- Names of the key handler classes -->
-		<string-array name="config_deviceKeyHandlerClasses" translatable="false">
-			<item>org.lineageos.settings.device.KeyHandler</item>
-		</string-array>
-
-		<!-- Show HD VoLTE Icon -->
-		<bool name="config_display_hd_volte">true</bool>
-
-    <!-- Whether device needs to wait for Qualcomm MPCTL service to start
+	
+	<!-- Show HD VoLTE Icon -->
+	<bool name="config_display_hd_volte">true</bool>
+	
+	<!-- Show Volte Icon -->
+	<bool name="config_carrier_vt_available">true</bool>
+	
+	<!-- Full screen aspect ratio -->
+    <bool name="config_haveHigherAspectRatioScreen">true</bool>
+	
+	<!-- Whether device needs to wait for Qualcomm MPCTL service to start
          before setting power profiles on boot. -->
     <bool name="config_waitForMpctlOnBoot">true</bool>
+	
+	<!-- Component name of the default wallpaper. This will be ImageWallpaper if not
+         specified -->
+    <string name="default_wallpaper_component" translatable="false">com.breel.wallpapers18/com.breel.wallpapers18.soundviz.wallpaper.variations.SoundVizWallpaperV2</string>
 </resources>

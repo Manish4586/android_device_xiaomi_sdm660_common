@@ -28,17 +28,11 @@ PLATFORM_PATH := device/xiaomi/sdm660-common
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
-$(call inherit-product, build/target/product/embedded.mk)
+$(call inherit-product-if-exists, build/target/product/embedded.mk)
 $(call inherit-product-if-exists, vendor/xiaomi/MiuiCamera/config.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS := device/xiaomi/sdm660-common/overlay
-
-# Build Fingerprint
-PRODUCT_BUILD_PROP_OVERRIDES += \
-		PRIVATE_BUILD_DESC="taimen-user 9 PQ2A.190305.002 5240760 release-keys"
-
-BUILD_FINGERPRINT := google/taimen/taimen:9/PQ2A.190305.002/5240760:user/release-keys
 
 # Platform properties
 $(call inherit-product, $(PLATFORM_PATH)/platform_prop.mk)
@@ -110,7 +104,6 @@ PRODUCT_PACKAGES += \
 	android.hardware.camera.provider@2.4-service \
 	camera.device@3.2-impl \
 	libxml2 \
-	Snap \
 	vendor.qti.hardware.camera.device@1.0 \
 	vendor.qti.hardware.camera.device@1.0_vendor
 
@@ -143,10 +136,6 @@ PRODUCT_PACKAGES += \
 	android.hardware.configstore@1.0-service \
 	android.hardware.broadcastradio@1.0-impl
 
-# Doze
-PRODUCT_PACKAGES += \
-	XiaomiDoze
-
 # DRM
 PRODUCT_PACKAGES += \
 	android.hardware.drm@1.0-impl:32 \
@@ -169,7 +158,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	libqcomfm_jni \
 	android.hardware.broadcastradio@1.0-impl \
-	FM2 \
 	qcom.fmradio \
 	qcom.fmradio.xml
 
@@ -354,7 +342,6 @@ PRODUCT_PACKAGES += \
 	init.qcom.rc \
 	init.qcom.usb.rc \
 	init.target.rc \
-	init.spectrum.rc \
 	ueventd.qcom.rc
 
 # RCS
@@ -407,10 +394,6 @@ PRODUCT_PACKAGES += \
 	android.hardware.thermal@1.0-service \
 	thermal.sdm660
 
-# ThermalController app
-PRODUCT_PACKAGES += \
-	ThermalController
-
 # Touchscreen
 PRODUCT_PACKAGES += \
 	libtinyxml2
@@ -433,6 +416,7 @@ PRODUCT_COPY_FILES += \
 
 # VR feature
 PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/android.hardware.vr.headtracking-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vr.headtracking.xml \
 	frameworks/native/data/etc/android.hardware.vr.high_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vr.high_performance.xml
 
 # Wifi
@@ -455,17 +439,25 @@ PRODUCT_COPY_FILES += \
 	$(PLATFORM_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
 	$(PLATFORM_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
-# XiaomiParts
-PRODUCT_PACKAGES += \
-	XiaomiParts
-
-# KeyHandler
-PRODUCT_PACKAGES += \
-	org.lineageos.keyhandler
-
 # Wi-Fi Display
 PRODUCT_BOOT_JARS += \
   WfdCommon
 
+# arcore
+PRODUCT_PACKAGES += \
+    arcore	  
+  
+ # Lens
+PRODUCT_PACKAGES += \
+    Lens 
+ 
+# Device-specific settings
+PRODUCT_PACKAGES += \
+    Dirac \	
+
+# ThermalController app
+PRODUCT_PACKAGES += \
+    ThermalController
+ 
 PRODUCT_PACKAGES += \
 	libnl
