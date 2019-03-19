@@ -37,12 +37,6 @@ $(call inherit-product, vendor/xiaomi/sdm660-common/sdm660-common-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS := device/xiaomi/sdm660-common/overlay
 
-# Build Fingerprint
-PRODUCT_BUILD_PROP_OVERRIDES += \
-	PRIVATE_BUILD_DESC="taimen-user 9 PQ3A.190605.003 5524043 release-keys"
-
-BUILD_FINGERPRINT := google/taimen/taimen:9/PQ3A.190605.003/5524043:user/release-keys
-
 # Platform properties
 $(call inherit-product, $(PLATFORM_PATH)/platform_prop.mk)
 
@@ -108,7 +102,6 @@ PRODUCT_PACKAGES += \
 	android.hardware.camera.provider@2.4-service \
 	camera.device@3.2-impl \
 	libxml2 \
-	Snap \
 	vendor.qti.hardware.camera.device@1.0 \
 	vendor.qti.hardware.camera.device@1.0_vendor
 
@@ -142,10 +135,6 @@ PRODUCT_PACKAGES += \
 	android.hardware.configstore@1.0-service \
 	android.hardware.broadcastradio@1.0-impl
 
-# Doze
-PRODUCT_PACKAGES += \
-	XiaomiDoze
-
 # DRM
 PRODUCT_PACKAGES += \
 	android.hardware.drm@1.0-impl:32 \
@@ -168,7 +157,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	libqcomfm_jni \
 	android.hardware.broadcastradio@1.0-impl \
-	FM2 \
 	qcom.fmradio \
 	qcom.fmradio.xml
 
@@ -357,7 +345,6 @@ PRODUCT_PACKAGES += \
 	init.qcom.rc \
 	init.qcom.usb.rc \
 	init.target.rc \
-	init.spectrum.rc \
 	init.performance.sdm660.rc \
 	ueventd.qcom.rc
 
@@ -411,10 +398,6 @@ PRODUCT_PACKAGES += \
 	android.hardware.thermal@1.0-service \
 	thermal.sdm660
 
-# ThermalController app
-PRODUCT_PACKAGES += \
-	ThermalController
-
 # Touchscreen
 PRODUCT_PACKAGES += \
 	libtinyxml2
@@ -437,6 +420,7 @@ PRODUCT_COPY_FILES += \
 
 # VR feature
 PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/android.hardware.vr.headtracking-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vr.headtracking.xml \
 	frameworks/native/data/etc/android.hardware.vr.high_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vr.high_performance.xml
 
 # VR
@@ -466,17 +450,21 @@ PRODUCT_COPY_FILES += \
 	$(PLATFORM_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
 	$(PLATFORM_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
-# XiaomiParts
-PRODUCT_PACKAGES += \
-	XiaomiParts
-
-# KeyHandler
-PRODUCT_PACKAGES += \
-	org.lineageos.keyhandler
-
 # Wi-Fi Display
 PRODUCT_BOOT_JARS += \
   WfdCommon
 
+# arcore
+PRODUCT_PACKAGES += \
+    arcore	  
+  
+ # Lens
+PRODUCT_PACKAGES += \
+    Lens 
+
+# ThermalController app
+PRODUCT_PACKAGES += \
+    ThermalController
+ 
 PRODUCT_PACKAGES += \
 	libnl
