@@ -48,6 +48,9 @@ TARGET_2ND_CPU_VARIANT := cortex-a73
 
 TARGET_USES_64_BIT_BINDER := true
 
+# Use Snapdragon LLVM, if available
+TARGET_USE_SDCLANG := true
+
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
