@@ -93,6 +93,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.config.media_vol_steps=15 \
 	ro.config.vc_call_vol_steps=7
 
+PRODUCT_CHARACTERISTICS := nosdcard	
+	
 # Bluetooth
 PRODUCT_PACKAGES += \
 	libbthost_if
