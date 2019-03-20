@@ -441,8 +441,8 @@
 	<!-- Show Volte Icon -->
 	<bool name="config_carrier_vt_available">true</bool>
 	
-	<!-- Full screen aspect ratio
-    <bool name="config_haveHigherAspectRatioScreen"></bool> -->
+	<!-- Full screen aspect ratio -->
+    <bool name="config_haveHigherAspectRatioScreen">true</bool> 
 	
 	<!-- Whether device needs to wait for Qualcomm MPCTL service to start
          before setting power profiles on boot. -->
