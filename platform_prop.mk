@@ -36,7 +36,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.af.client_heap_size_kbyte=7168 \
 	ro.audio.flinger_standbytime_ms=300 \
 	ro.audio.soundfx.dirac=true \
-	ro.vendor.audio.sdk.fluencetype=fluence \
 	ro.vendor.audio.sdk.ssr=false \
 	vendor.audio.dolby.ds2.enabled=false \
 	vendor.audio.dolby.ds2.hardbypass=false \
@@ -57,7 +56,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	vendor.audio.use.sw.ape.decoder=true \
 	vendor.fm.a2dp.conc.disabled=true \
 	vendor.voice.path.for.pcm.voip=true
-
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
