@@ -468,3 +468,7 @@ PRODUCT_PACKAGES += \
  
 PRODUCT_PACKAGES += \
 	libnl
+
+# Wallpapers
+PRODUCT_PACKAGES += \
+    WallpapersBReel2018	
