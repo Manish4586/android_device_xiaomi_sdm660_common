@@ -72,9 +72,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.camera.eis.enable=0 \
 	persist.camera.preview.ubwc=0 \
 	persist.vendor.qti.telephony.vt_cam_interface=1 \
-	vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi,org.cyanogenmod.snap \
+	vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi \
 	camera.hal1.packagelist=com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android \
-	vendor.camera.hal1.packagelist= com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android
+	vendor.camera.hal1.packagelist=com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android
 
 # Charger
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -271,10 +271,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # ZRAM
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.qti.config.zram=true
-
-# USB debugging at boot
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp,adb
-	ro.adb.secure=0
-	ro.secure=0
-	ro.debuggable=1
