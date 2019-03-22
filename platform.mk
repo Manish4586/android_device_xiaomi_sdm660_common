@@ -463,7 +463,7 @@ PRODUCT_PACKAGES += \
     Dirac \	
 
 # ThermalController app
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     ThermalController
  
 PRODUCT_PACKAGES += \
