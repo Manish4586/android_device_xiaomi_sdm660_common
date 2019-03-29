@@ -467,7 +467,7 @@ PRODUCT_PACKAGES += \
  
 # Device-specific settings
 PRODUCT_PACKAGES += \
-    Dirac \	
+    XiaomiParts	
 
 # ThermalController app
 PRODUCT_PACKAGES += \
