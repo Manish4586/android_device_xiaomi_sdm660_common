@@ -475,7 +475,7 @@ PRODUCT_PACKAGES += \
     Lens 
  
 # Device-specific settings
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     XiaomiParts	
 
 # ThermalController app
