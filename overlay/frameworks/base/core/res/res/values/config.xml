@@ -427,7 +427,7 @@
     <bool name="config_enableBurnInProtection">true</bool>
 
     <!-- Specify if the fingerprint hardware support gestures-->
-    <bool name="config_fingerprintSupportsGestures">false</bool>
+    <bool name="config_fingerprintSupportsGestures">true</bool>
 
 	<!-- Time to give to the proximity sensor before toggling the flashlight with the Power button.
          Set to -1 to disable the proximity sensor check at all-->
