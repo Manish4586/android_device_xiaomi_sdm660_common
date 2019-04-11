@@ -51,9 +51,6 @@ TARGET_USES_64_BIT_BINDER := true
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
-# ANT+
-BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
-
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 USE_CUSTOM_AUDIO_POLICY := 1
@@ -167,11 +164,6 @@ TARGET_EXFAT_DRIVER := sdfat
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
-
-# FM Radio
-AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
-BOARD_HAS_QCA_FM_SOC := cherokee
-BOARD_HAVE_QCOM_FM := true
 
 # GPS
 TARGET_NO_RPC := true
