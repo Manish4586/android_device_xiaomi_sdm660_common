@@ -52,12 +52,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
 	fs_config_files
 
-# ANT+
-PRODUCT_PACKAGES += \
-	AntHalService \
-	antradio_app \
-	libantradio
-
 # Audio
 PRODUCT_PACKAGES += \
 	android.hardware.audio@4.0-impl:32 \
@@ -148,13 +142,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
-
-# FM packages
-PRODUCT_PACKAGES += \
-	libqcomfm_jni \
-	android.hardware.broadcastradio@1.0-impl \
-	qcom.fmradio \
-	qcom.fmradio.xml
 
 # Framework RRO
 PRODUCT_ENFORCE_RRO_TARGETS := \
@@ -341,7 +328,6 @@ PRODUCT_PACKAGES += \
 	init.qcom.post_boot.sh \
 	init.qcom.sh \
 	init.qcom.usb.sh \
-	init.qti.fm.sh \
 	init.qti.qseecomd.sh
 
 PRODUCT_PACKAGES += \
