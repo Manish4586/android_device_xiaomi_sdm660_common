@@ -446,8 +446,8 @@ PRODUCT_COPY_FILES += \
 	$(PLATFORM_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # Wi-Fi Display
-PRODUCT_BOOT_JARS += \
-  WfdCommon
+#PRODUCT_BOOT_JARS += \
+#  WfdCommon
 
 # arcore
 PRODUCT_PACKAGES += \
