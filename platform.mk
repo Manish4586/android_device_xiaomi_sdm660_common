@@ -453,8 +453,8 @@ PRODUCT_PACKAGES += \
     Lens 
  
 # Device-specific settings
-#PRODUCT_PACKAGES += \
-    XiaomiParts	
+PRODUCT_PACKAGES += \
+    Dirac
 
 # ThermalController app
 PRODUCT_PACKAGES += \
