@@ -456,11 +456,7 @@ PRODUCT_PACKAGES += \
   
  # Lens
 PRODUCT_PACKAGES += \
-    Lens 
- 
-# Device-specific settings
-#PRODUCT_PACKAGES += \
-    XiaomiParts	
+    Lens 	
 
 # ThermalController app
 PRODUCT_PACKAGES += \
