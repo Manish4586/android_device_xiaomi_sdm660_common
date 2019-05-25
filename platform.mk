@@ -454,9 +454,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     arcore	  
   
- # Lens
+# Lens
 PRODUCT_PACKAGES += \
     Lens 	
+
+# Device-specific settings
+PRODUCT_PACKAGES += \
+    XiaomiParts
 
 # ThermalController app
 PRODUCT_PACKAGES += \
