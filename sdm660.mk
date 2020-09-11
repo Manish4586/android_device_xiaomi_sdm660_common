@@ -274,7 +274,8 @@ PRODUCT_PACKAGES += \
 # HWBinder
 PRODUCT_PACKAGES += \
     libhwbinder \
-    libhwbinder.vendor
+    libhwbinder.vendor \
+    libhidltransport
 
 # IDC
 PRODUCT_COPY_FILES += \
