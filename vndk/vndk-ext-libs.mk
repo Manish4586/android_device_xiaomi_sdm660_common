@@ -46,5 +46,4 @@ EXTRA_VENDOR_LIBRARIES_32 := \
 
 EXTRA_VENDOR_LIBRARIES_64 := \
     libicuuc \
-    libstdc++ \
-    libpowermanager
+    libstdc++
