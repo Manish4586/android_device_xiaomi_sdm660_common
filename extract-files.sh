@@ -109,3 +109,14 @@ if [[ "$ONLY_COMMON" = "false" ]] && [[ -s "${DEVICE_DIR}"/proprietary-files.txt
 fi
 
 "$COMMON_DIR"/setup-makefiles.sh
+
+for i in $(grep -rn 'libhidltransport.so\|libhwbinder.so' ../../../vendor/xiaomi/"${DEVICE_SPECIFIED_COMMON}"/proprietary | awk '{print $3}'); do
+	patchelf --remove-needed "libhwbinder.so" "$i"
+	patchelf --remove-needed "libhidltransport.so" "$i"
+done
+
+for i in $(grep -rn 'libhidltransport.so\|libhwbinder.so' ../../../vendor/xiaomi/"${DEVICE_COMMON}"/proprietary | awk '{print $3}'); do
+	patchelf --remove-needed "libhwbinder.so" "$i"
+	patchelf --remove-needed "libhidltransport.so" "$i"
+done
+
