@@ -127,6 +127,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.adm.buffering.ms=6
 endif
 
+# BPF
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.kernel.ebpf.supported=true
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
