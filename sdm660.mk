@@ -131,7 +131,7 @@ PRODUCT_COPY_FILES += \
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
-    antradio_app
+    com.dsi.ant.antradio_library
 
 # AuthSecret
 PRODUCT_PACKAGES += \
