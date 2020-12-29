@@ -131,13 +131,7 @@ PRODUCT_COPY_FILES += \
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
-    antradio_app \
-    com.dsi.ant.antradio_library \
-    libantradio
-
-# ANT Permission
-PRODUCT_COPY_FILES += \
-    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
+    antradio_app
 
 # AuthSecret
 PRODUCT_PACKAGES += \
@@ -215,13 +209,6 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     vendor.display.config@1.9 \
     vendor.display.config@1.9_vendor
-    
-# Density
-TARGET_SCREEN_DENSITY := 400
-
-# DeviceDoze
-PRODUCT_PACKAGES += \
-    DeviceDoze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -401,9 +388,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(COMMON_PATH)/overlay \
-    $(COMMON_PATH)/overlay-awaken \
-    $(COMMON_PATH)/overlay-lineage
+    $(COMMON_PATH)/overlay
 
 # RRO configuration
 TARGET_USES_RRO := true
@@ -630,6 +615,3 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
-# DeviceSettings
-PRODUCT_PACKAGES += \
-   DeviceSettings
