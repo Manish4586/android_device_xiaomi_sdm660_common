@@ -494,6 +494,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.1 \
     android.hardware.secure_element@1.0 \
     librmnetctl \
+    libnetd_resolv \
     libxml2 \
     libprotobuf-cpp-full \
     qti-telephony-hidl-wrapper \
