@@ -608,3 +608,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
+# DeviceDoze
+PRODUCT_PACKAGES += \
+    DeviceDoze
+
+# DeviceSettings
+PRODUCT_PACKAGES += \
+   DeviceSettings
+
