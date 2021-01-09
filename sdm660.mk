@@ -536,6 +536,10 @@ PRODUCT_COPY_FILES += \
 # Security Patch
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
+# servicetracker
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.servicetracker@1.2.vendor
+
 # Shims
 PRODUCT_PACKAGES += \
     camera.sdm660_shim
