@@ -398,6 +398,7 @@ vendor/lib/libgcs-ipc.so|215c2dded9ccd0fc015db2d7008824e332886d2b
 vendor/lib/libgcs-osal.so|5f0c6798dbeb9c806706b0cf217440662452364c
 vendor/lib/libgcs.so|ccb6ac9c27021cf4f2ec09994742c38b700c2583
 vendor/lib/libsmwrapper.so|7f7bd7045ced84928ec46b457ec5f21d5228ea3a
+vendor/lib64/hw/sound_trigger.primary.sdm660.so|f6e63ab091609198fea95bb0808e4b415efffd3a
 
 # Media - from LA.UM.8.2.r1-07400-sdm660.0
 -vendor/lib/libgpustats.so|86d0490b5ccdbeeba64c4f06a9f1503d01eaeabc
