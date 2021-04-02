@@ -1,6 +1,6 @@
 #Build FP to be picked by both system and vendor
-BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ1A.210105.003/7005429:user/release-keys"
-PRIVATE_BUILD_DESC := "redfin-user 11 RQ1A.210105.003 7005429 release-keys"
+BUILD_FINGERPRINT := "xiaomi/jasmine/jasmine_sprout:8.1.0/OPM1.171019.011/V9.6.5.0.ODIMIFE:user/release-keys"
+PRIVATE_BUILD_DESC := "jasmine-user 8.1.0 OPM1.171019.011 V9.6.5.0.ODIMIFE"
 
 # Apex
 ifeq ($(ENABLE_APEX), true)
