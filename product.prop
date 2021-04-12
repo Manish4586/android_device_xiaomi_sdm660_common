@@ -35,6 +35,11 @@ ro.opa.eligible_device=true
 ro.setupwizard.rotation_locked=true
 ro.config.bt_sco_vol_steps=30
 
+# IORap app launch prefetching using Perfetto traces and madvise
+iorapd.perfetto.enable=true
+iorapd.readahead.enable=true
+ro.iorapd.enable=true
+
 # LMKD
 ro.lmk.log_stats=true
 ro.lmk.use_psi=false
