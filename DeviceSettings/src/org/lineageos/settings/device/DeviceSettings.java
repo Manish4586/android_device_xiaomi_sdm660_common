@@ -28,6 +28,7 @@ import org.lineageos.settings.device.preferences.SecureSettingListPreference;
 import org.lineageos.settings.device.preferences.SecureSettingSwitchPreference;
 import org.lineageos.settings.device.preferences.VibrationSeekBarPreference;
 import org.lineageos.settings.device.preferences.NotificationLedSeekBarPreference;
+import org.lineageos.settings.device.preferences.CustomSeekBarPreference;
 
 import java.lang.Math.*;
 
@@ -43,6 +44,12 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String NOTIF_LED_PATH = "/sys/class/leds/white/max_brightness";
     
     public static final String PREF_KEY_FPS_INFO = "fps_info";
+    
+    public static final  String CATEGORY_AUDIO_AMPLIFY = "audio_amplify";
+    public static final  String PREF_HEADPHONE_GAIN = "headphone_gain";
+    public static final  String PREF_MIC_GAIN = "mic_gain";
+    public static final  String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
+    public static final  String MIC_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
 
     // value of vtg_min and vtg_max
     public static final int MIN_VIBRATION = 116;
@@ -57,11 +64,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
     public static final String PREF_THERMAL = "thermal";
     public static final String THERMAL_PATH = "/sys/devices/virtual/thermal/thermal_message/sconfig";
-
-    private static final String CATEGORY_HALL_WAKEUP = "hall_wakeup";
-    public static final String PREF_HALL_WAKEUP = "hall";
-    public static final String HALL_WAKEUP_PATH = "/sys/module/hall/parameters/hall_toggle";
-    public static final String HALL_WAKEUP_PROP = "persist.service.folio_daemon";
 
     private static final String DEVICE_DOZE_PACKAGE_NAME = "com.advanced.settings.doze";
 
@@ -84,6 +86,16 @@ public class DeviceSettings extends PreferenceFragment implements
             VibrationSeekBarPreference vibrationStrength = (VibrationSeekBarPreference) findPreference(PREF_VIBRATION_STRENGTH);
             vibrationStrength.setOnPreferenceChangeListener(this);
         } else { getPreferenceScreen().removePreference(findPreference(CATEGORY_VIBRATOR)); }
+        
+        // Headphone & Mic Gain
+        if (FileUtils.fileWritable(HEADPHONE_GAIN_PATH) && FileUtils.fileWritable(MIC_GAIN_PATH)) {
+           CustomSeekBarPreference headphoneGain = (CustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
+           headphoneGain.setOnPreferenceChangeListener(this);
+           CustomSeekBarPreference micGain = (CustomSeekBarPreference) findPreference(PREF_MIC_GAIN);
+           micGain.setOnPreferenceChangeListener(this);
+        } else {
+          getPreferenceScreen().removePreference(findPreference(CATEGORY_AUDIO_AMPLIFY));
+        }
 
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
         if (isAppNotInstalled(DEVICE_DOZE_PACKAGE_NAME)) {
@@ -110,13 +122,6 @@ public class DeviceSettings extends PreferenceFragment implements
         mTHERMAL.setSummary(mTHERMAL.getEntry());
         mTHERMAL.setOnPreferenceChangeListener(this);
 
-        if (FileUtils.fileWritable(HALL_WAKEUP_PATH)) {
-            SecureSettingSwitchPreference hall = (SecureSettingSwitchPreference) findPreference(PREF_HALL_WAKEUP);
-            hall.setChecked(FileUtils.getValue(HALL_WAKEUP_PATH).equals("Y"));
-            hall.setOnPreferenceChangeListener(this);
-        } else {
-            getPreferenceScreen().removePreference(findPreference(CATEGORY_HALL_WAKEUP));
-        }
     }
 
     @Override
@@ -132,15 +137,18 @@ public class DeviceSettings extends PreferenceFragment implements
                 FileUtils.setValue(VIBRATION_STRENGTH_PATH, vibrationValue);
                 break;
 
+            case PREF_HEADPHONE_GAIN:
+                FileUtils.setValue(HEADPHONE_GAIN_PATH, value + " " + value);
+                break;
+
+            case PREF_MIC_GAIN:
+                FileUtils.setValue(MIC_GAIN_PATH, (int) value);
+                break;
+
             case PREF_THERMAL:
                 mTHERMAL.setValue((String) value);
                 mTHERMAL.setSummary(mTHERMAL.getEntry());
                 FileUtils.setValue(THERMAL_PATH, (String) value);
-                break;
-
-            case PREF_HALL_WAKEUP:
-                FileUtils.setValue(HALL_WAKEUP_PATH, (boolean) value ? "Y" : "N");
-                FileUtils.setProp(HALL_WAKEUP_PROP, (boolean) value);
                 break;
 
             case PREF_KEY_FPS_INFO:
