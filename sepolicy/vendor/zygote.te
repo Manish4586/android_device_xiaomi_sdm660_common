@@ -1,1 +1,3 @@
 allow zygote exported_camera_prop:file { read write };
+allow zygote exported_camera_prop:file { open };
+allow zygote exported_camera_prop:file { getattr };
