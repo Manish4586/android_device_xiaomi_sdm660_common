@@ -324,6 +324,10 @@ PRODUCT_PACKAGES += \
     qcom.fmradio.xml
 endif
 
+# Iorap
+PRODUCT_PACKAGES += \
+    iorap-app-startup-runner
+
 # Ion
 PRODUCT_PACKAGES += \
     libion
