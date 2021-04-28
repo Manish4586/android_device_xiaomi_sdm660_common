@@ -49,7 +49,7 @@
     <!-- vendor_uuid. The below tag represents QTI SVA engine sound model   -->
     <!-- configuration. ISV must use their own unique vendor_uuid.          -->
     <sound_model_config>
-        <param vendor_uuid="68ab2d40-e860-11e3-95ef-0002a5d5c51b" />
+        <param vendor_uuid="9f6ad62a-1f0b-11e7-87c5-40a8f03d3f15" />
 	<!-- HMI_L6660_A01-1117 MOD by duanlongfei for VTS fail 20180603 begin  -->
         <param execution_type="ADSP" /> <!-- value: "WDSP" "ADSP" "DYNAMIC" -->
 	<!-- HMI_L6660_A01-1117 MOD by duanlongfei for VTS fail 20180603 end    -->
