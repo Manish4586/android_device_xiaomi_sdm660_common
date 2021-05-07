@@ -40,7 +40,6 @@ endif
 # Inherit proprietary files
 $(call inherit-product, vendor/xiaomi/jasmine_sprout/jasmine_sprout-vendor.mk)
 $(call inherit-product-if-exists, vendor/xiaomi/MiuiCamera/config.mk)
-$(call inherit-product, vendor/xiaomi/dirac/dirac.mk)
 
 # Common Tree Path
 COMMON_PATH := device/xiaomi/sdm660-common
