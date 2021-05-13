@@ -1,6 +1,6 @@
 #Build FP to be picked by both system and vendor
-BUILD_FINGERPRINT := "xiaomi/jasmine/jasmine_sprout:8.1.0/OPM1.171019.011/V9.6.5.0.ODIMIFE:user/release-keys"
-PRIVATE_BUILD_DESC := "jasmine-user 8.1.0 OPM1.171019.011 V9.6.5.0.ODIMIFE"
+BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ2A.210505.003/7255357:user/release-keys"
+PRIVATE_BUILD_DESC := "redfin-user 11 RQ2A.210505.003 7255357 release-keys"
 
 # Apex
 ifeq ($(ENABLE_APEX), true)
@@ -271,6 +271,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1 \
     persist.vendor.radio.procedure_bytes=SKIP \
+    persist.radio.VT_CAM_INTERFACE=2 \
     vendor.rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
     ro.telephony.default_network=9,9 \
     ro.telephony.iwlan_operation_mode=legacy \
@@ -326,3 +327,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.zram.mark_idle_delay_mins=60 \
     ro.zram.first_wb_delay_mins=180 \
     ro.zram.periodic_wb_delay_hours=24
+
