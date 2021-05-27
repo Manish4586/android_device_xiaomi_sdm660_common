@@ -2,12 +2,6 @@
 BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ2A.210505.003/7255357:user/release-keys"
 PRIVATE_BUILD_DESC := "redfin-user 11 RQ2A.210505.003 7255357 release-keys"
 
-# Apex
-ifeq ($(ENABLE_APEX), true)
-PRODUCT_PRODUCT_PROPERTIES += \
-     ro.apex.updatable=true
-endif
-
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat64.enabled=true \
