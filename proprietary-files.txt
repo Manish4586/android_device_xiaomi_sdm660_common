@@ -872,6 +872,22 @@ vendor/lib64/libmmosal.so|e9fdb48163e92b089cea0c397723a8416436c272
 vendor/lib64/libwfdhdcpcp.so|a9f56d29d9243272ca73d564977022d3aef3b8e4
 vendor/lib64/vendor.qti.hardware.sigma_miracast@1.0.so|5be9cd005e79619fbbc0c4bad97a388655eda945
 
+# WFD Dependency - from RQ2A.210505.003
+system_ext/lib/libdisplayconfig.qti.so|2a717ceecf7bbbfead0003d9a9f46e7289e43d74
+system_ext/lib/libqdMetaData.so|b1644a08951fb138b3cc2a09929bdb05e9176251
+system_ext/lib/vendor.display.config@1.0.so|1e81eb9f2779092432476e1eb2252ef9765b9399
+system_ext/lib/vendor.display.config@2.0.so|3fba3c4a4b3b7d90b78f33225ea1f6100b1aaa09
+system_ext/lib64/libdisplayconfig.qti.so|8fd921015e928cb9e4fefce19548a5aa8250508d
+system_ext/lib64/libqdMetaData.so|10a533623ff4b5587a4f53947eebf71d0e7c967e
+system_ext/lib64/vendor.display.config@1.0.so|d258f383eab71164cb01a774bdd7371f7c5e38f0
+system_ext/lib64/vendor.display.config@2.0.so|f28e83979114e2c0a5322680e0b3173a66c6bf67
+vendor/lib/libdisplayconfig.qti.so|b1a84d0a49bad0c979696cda99de4f5376da8be9
+vendor/lib/libqdMetaData.so|fd456a0a06e5aefd2b6acc07d451eee94106e570
+vendor/lib/vendor.display.config@2.0.so|36abce65aab05b783987202b843b59598f93f91d
+vendor/lib64/libdisplayconfig.qti.so|54dfa8f97bb52145268456fb7761b34bec96c8fc
+vendor/lib64/libqdMetaData.so|fc7d6114eb7bf8e6af4ed37b936a03dc7bef7d93
+vendor/lib64/vendor.display.config@2.0.so|92ae57d5c6657e91ec3d89579092bdd78aeb8d86
+
 # Common Camera - from Pie
 vendor/lib/libchromaflash.so|cf85560822e04014b8950a1abae9c2843069101d
 vendor/lib/libllvd_smore.so|740de4c339772df80858ddd9390f91ead71eadeb
