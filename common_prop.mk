@@ -1,6 +1,6 @@
 #Build FP to be picked by both system and vendor
-BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ2A.210505.003/7255357:user/release-keys"
-PRIVATE_BUILD_DESC := "redfin-user 11 RQ2A.210505.003 7255357 release-keys"
+BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ3A.210605.005/7349499:user/release-keys"
+PRIVATE_BUILD_DESC := "redfin-user 11 RQ3A.210605.005 7349499 release-keys"
 
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
