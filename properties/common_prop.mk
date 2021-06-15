@@ -121,7 +121,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=cherokee \
     bt.max.hfpclient.connections=1 \
     ro.vendor.fm.use_audio_session=true \
-    vendor.hw.fm.init=0
+    vendor.hw.fm.init=0 \
+    persist.bluetooth.disableabsvol=true
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     vendor.bluetooth.soc=cherokee
