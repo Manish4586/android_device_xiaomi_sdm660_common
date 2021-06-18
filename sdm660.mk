@@ -30,13 +30,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product-if-exists, build/target/product/embedded.mk)
 
-# Enable updating of APEXes
-ifeq ($(ENABLE_APEX), true)
-TARGET_SUPPORTS_UPDATABLE_APEX := true
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
-$(call inherit-product-if-exists, vendor/prebuilts/config/apex.mk)
-endif
-
 # Inherit proprietary files
 $(call inherit-product, vendor/xiaomi/sdm660-common/sdm660-common-vendor.mk)
 $(call inherit-product, vendor/xiaomi/wayne-common/wayne-common-vendor.mk)
